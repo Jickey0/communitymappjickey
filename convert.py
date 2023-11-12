@@ -1,11 +1,12 @@
+# ADD THIS TO EXISTING PYTHON FUNCTION
 from geopy.geocoders import Nominatim
 
-geolocator = Nominatim(user_agent="my_user_agent")
+geolocator = Nominatim(user_agent="find my location")
 
-city ="London"
+address = str(event['address'])
 
-country ="Uk"
+loc = geolocator.geocode(address)
 
-loc = geolocator.geocode(city+','+ country)
+data = (location.latitude, location.longitude)
 
-print("latitude is :-" ,loc.latitude,"\nlongtitude is:-" ,loc.longitude)
+# table.put_item into our database
