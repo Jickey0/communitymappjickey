@@ -8,4 +8,5 @@ app.secret_key = 'secret_key'
 # renders the default page
 @app.route("/")
 def index():
-    return render_template("index.html")
+    markers = [-75.480858, 40.632950]
+    return render_template("index.html", markers=markers)
